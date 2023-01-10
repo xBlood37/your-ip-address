@@ -3,43 +3,37 @@ const btn = document.querySelector("#btn");
 const ip = document.querySelector("#ip");
 
 class User {
-  constructor(userData, btn, ip) {
+  constructor(userData, btn) {
     this.userData = userData;
     this.btn = btn;
-    this.ip = ip;
   }
 
-  userAgentData() {
+  getBrowserData() {
     this.btn.addEventListener("click", () => {
-      const values = navigator.userAgent;
-      const html = `
-              <p>${values}</p>
-            `;
-
-      this.userData.innerHTML = html;
+      const browserData = `<p>${navigator.userAgent}</p>`;
+      this.userData.innerHTML = browserData;
     });
   }
 
-  userAgentIp() {
+  getUserDataIp() {
     this.btn.addEventListener("click", () => {
-      const uri = "https://ipapi.co/json/";
-      const inner = (ip, d) => {
-        const hmtl = `
-                <p>Your ip: ${d.ip}</p>
-                <p>Your city: ${d.city}</p>
-                <p>Your region: ${d.region}</p>
-                <p>Your hostname: ${d.org}</p>
-            `;
-
-        ip.innerHTML = hmtl;
-      };
-      const values = fetch(uri)
+      const values = fetch("https://ipapi.co/json/")
         .then((d) => d.json())
-        .then((d) => inner(ip, d));
+        .then((d) => {
+          const hmtl = `
+          <p>Your ip: ${d.ip}</p>
+          <p>TLD: ${d.country_tld}</p>
+          <p>Your city: ${d.city}</p>
+          <p>Your region: ${d.region}</p>
+          <p>Your hostname: ${d.org}</p>
+          <p>Your country: ${d.country}</p>
+          <p>Country name full: ${d.country_name}</p>`;
+          ip.innerHTML = hmtl;
+        });
     });
   }
 }
 
 const user = new User(userData, btn, ip);
-user.userAgentData();
-user.userAgentIp();
+user.getBrowserData();
+user.getUserDataIp();

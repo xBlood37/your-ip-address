@@ -10,7 +10,7 @@ class User {
 
   getBrowserData() {
     this.btn.addEventListener("click", () => {
-      const browserData = `<p>${navigator.userAgent}</p>`;
+      const browserData = `<p>${navigator.vendor} ${navigator.language}</p>`;
       this.userData.innerHTML = browserData;
     });
   }
@@ -33,6 +33,8 @@ class User {
     });
   }
 }
+
+console.log(navigator);
 
 const user = new User(userData, btn);
 user.getBrowserData();

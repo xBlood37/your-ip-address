@@ -34,6 +34,6 @@ class User {
   }
 }
 
-const user = new User(userData, btn, ip);
+const user = new User(userData, btn);
 user.getBrowserData();
 user.getUserDataIp();

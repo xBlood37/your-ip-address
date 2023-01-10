@@ -21,13 +21,13 @@ class User {
         .then((d) => d.json())
         .then((d) => {
           const hmtl = `
-          <p>Your ip: ${d.ip}</p>
-          <p>TLD: ${d.country_tld}</p>
-          <p>Your city: ${d.city}</p>
-          <p>Your region: ${d.region}</p>
-          <p>Your hostname: ${d.org}</p>
-          <p>Your country: ${d.country}</p>
-          <p>Country name full: ${d.country_name}</p>`;
+              <p>Your ip: ${d.ip}</p>
+              <p>TLD: ${d.country_tld}</p>
+              <p>Your city: ${d.city}</p>
+              <p>Your region: ${d.region}</p>
+              <p>Your hostname: ${d.org}</p>
+              <p>Your country: ${d.country}</p>
+              <p>Country name full: ${d.country_name}</p>`;
           ip.innerHTML = hmtl;
         });
     });

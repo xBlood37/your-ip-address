@@ -1,17 +1,17 @@
-const userData = document.querySelector(".user-data");
-const btn = document.querySelector("#btn");
-const ip = document.querySelector("#ip");
+const userBrowser = document.querySelector(".user-browser");
+const btn = document.querySelector(".btn");
+const ip = document.querySelector(".user-ip");
 
 class User {
-  constructor(userData, btn) {
-    this.userData = userData;
+  constructor(userBrowser, btn) {
+    this.userBrowser = userBrowser;
     this.btn = btn;
   }
 
   getBrowserData() {
     this.btn.addEventListener("click", () => {
       const browserData = `<p>${navigator.vendor} ${navigator.language}</p>`;
-      this.userData.innerHTML = browserData;
+      this.userBrowser.innerHTML = browserData;
     });
   }
 
@@ -34,8 +34,6 @@ class User {
   }
 }
 
-console.log(navigator);
-
-const user = new User(userData, btn);
+const user = new User(userBrowser, btn);
 user.getBrowserData();
 user.getUserDataIp();

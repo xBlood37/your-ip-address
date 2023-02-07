@@ -1,51 +1,45 @@
 .user {
-  display: grid;
+  display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 10%;
+  flex-direction: column;
+  height: 100vh;
 }
 
-.user-data > p {
-  font-size: 20px;
-  margin-bottom: 10px;
+.footer {
+  display: flex;
+  flex-direction: row;
 }
 
-#ip > p {
-  font-size: 20px;
-  margin-bottom: 10px;
+.github-img {
+  width: 20px;
+  height: auto;
 }
 
-#btn {
+.footer-figcaption {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
+}
+
+.footer-figure {
+  margin: 0;
+  margin-top: 10px;
+  opacity: 0.5;
+}
+
+.btn {
   cursor: pointer;
   background-color: #4caf50;
   border: none;
   color: white;
   padding: 15px 32px;
-  text-align: center;
   text-decoration: none;
-  display: block;
   font-size: 16px;
   margin: 0 auto;
 }
 
-#btn:hover {
+.btn:hover {
   background-color: #245425;
-}
-
-#footer {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  color: rgba(0, 0, 0, 0.5);
-  font-size: 12px;
-}
-
-#footer > a {
-  margin: 0 auto;
-  padding-top: 10px;
-}
-
-#footer > a > img {
-  width: 30px;
-  height: 30px;
 }
